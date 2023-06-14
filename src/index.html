@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ecommerceJavierOspina</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/styles/main.css">
+  <!-- ICONS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="shortcut icon" href="./assets/images/main_logo.png" type="image/x-icon">
+  <!-- JS -->
+  <script src="https://kit.fontawesome.com/d7b15b584a.js" crossorigin="anonymous"></script>
+ <script src="./assets/js/main.js" type="module" defer></script>
+ <script src="./assets/js/helpers/navbar.js"></script>
+ <script src="./assets/js/helpers/darkmode.js" type="module" defer></script>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+      <div class="loader__container">
+        <span></span>
+      </div>
+    </div>
+    
+    <!-- Heder -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="/" class="nav__logo">
+        <img src="./assets/images/main_logo.png" alt="">    
+      </a>
+      <div class="nav__menu">
+        <button type="button" class="nav__btn btn--close">
+          <i class='bx bx-x'></i>
+        </button>
+        <ul class="nav__list">
+          <li class="nav__items">
+            <a href="#" class="nav__link"><i class='bx bx-home-smile'>
+              </i><p class="color_inicio">inicio</p>
+            </a>
+          </li>
+          <li class="nav__items">
+            <a href="#" class="nav__link"><i class='bx bxs-t-shirt'>
+              </i><p class="color_productos">productos</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav__buttons">
+        <button type="button" class="nav__btn btn--cart">
+          <i class='bx bx-shopping-bag'></i>
+          <span class="notify">0</span>
+        </button>
+        <button type="button" class="nav__btn btn--menu">
+          <i class='bx bx-grid-alt'></i>
+        </button> 
+          <!-- BOTON DE DARK MODE -->
+       <button class="switch" id="switch">
+          <span>
+            <i class="fa-solid fa-sun"></i>
+          </span>
+          <span><i class="fa-solid fa-moon"></i></span>
+       </button>
+      </div>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="products section">
+      <h2 class="products__title section--title">Productos</h2>
+      <div class="products__container container"></div>
+    </section>
+    <div class="product">
+    </div>
+  </main>
+  
+  <!-- CART -->
+  <div class="cart">
+    <div class="cart__container">
+      <div class="cart__header">
+        <h3 class="cart__title">Carrito de Compras</h3>
+        <button type="button" class="cart__btn btn--close">
+          <i class='bx bx-x'></i>
+        </button>
+      </div>
+      <div class="cart__body"></div>
+      <div class="cart__footer">
+        <div class="cart__count"> 
+          <span class="cart__count--text">Articulos</span>
+          <span class="cart__count--item">0</span>
+        </div>
+        <div class="cart__total">
+          <span class="cart__count--text">Total</span>
+          <span class="cart__total--item">$0</span>
+        </div>
+        <button type="button" class="cart__btn btn--buy">
+          Comprar
+        </button>
+      </div>
+    </div>
+  </div>
+
+    <!-- Imagen del producto -->
+    <img id="product__image" class='product__image' src="" alt="Product Image">
+    <!-- Descripción del producto -->
+    <div id="product__description" class="product__description"></div>
+  </div>
+</div>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <!-- BOTON PARA CHAT -->
+    <a class="btn__contact" href="#"><button><i class='bx bx-chat'></i>Contact</button></a>
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__left">
+          <h3 class="footer__title">Sobre Mí</h3>
+          <p>Bienvenido/a a mi sitio web. Soy Javier Ospina y soy desarrollador full-stack.</p>
+          <p>Me apasiona estudiar y hacer deporte. En este sitio, comparto algunos productos de Academlo.</p>
+          <p>¡Gracias por visitar mi página!</p>
+        </div>
+        <div class="footer__right"></div>
+      </div>
+      <div class="social__networks">
+        <h4>Visítanos en nuestras redes:</h4>
+        <ul>
+          <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+          <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+          <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+          <li><a href="#"><i class='bx bxl-whatsapp'></i></a></li>
+        </ul>
+      </div>      
+  </footer>
+</body>
+</html>
