@@ -534,6 +534,7 @@ header.abajo{
               color .3s ease-in-out;
 }
 
+
 .product__btn:hover {
   background-color: var(--secondary-color);
   color: var(--background-color);
