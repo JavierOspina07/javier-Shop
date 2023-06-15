@@ -166,7 +166,7 @@ body {
   color: var(--text-color);
 }
 
-/* ==================  BOTON DRAKMODE  =================== */
+/* ==================  BOTON DARKMODE  =================== */
 body.dark {
   background-color: #000000;
 }
@@ -177,10 +177,40 @@ body.dark {
 }
 
 /* Estilos para el modo claro */
-.products__title {
+.products__title, .cart__count {
   color: #000; /* Color del texto en modo claro */
 }
 
+.dark .cart{
+  background-color: #000000;
+  color: var(--background-color);
+  border: 1px solid var(--color-price);
+}
+
+.dark .product__content{
+  background-color: var(--color-price);
+}
+
+.dark .nav__menu{
+  background-color: #000;
+  border: 1px solid var(--color-price);
+}
+
+.dark .bx-x{
+  color: red;
+}
+
+.dark .cart__total{
+  color: #000;
+}
+
+.dark .bx-trash{
+  color: var(--background-color);
+}
+
+.dark .bx-plus, .dark .bx-minus{
+  color: var(--background-color);
+}
 
 /* scroll bar */
 ::-webkit-scrollbar {
@@ -506,6 +536,10 @@ header.abajo{
   background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
 }
 
+.product__price{
+  
+}
+
 .product__btn {
   position: absolute;
   top: 0;
@@ -664,7 +698,7 @@ header.abajo{
 
 
   .bxl-facebook{
-    color: #1877F2
+    color: #3b5998
   }
   .bxl-facebook:hover{
     transform: scale(1.7);
