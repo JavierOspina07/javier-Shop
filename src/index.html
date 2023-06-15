@@ -13,23 +13,25 @@
   <link rel="shortcut icon" href="./assets/images/main_logo.png" type="image/x-icon">
   <!-- JS -->
   <script src="https://kit.fontawesome.com/d7b15b584a.js" crossorigin="anonymous"></script>
- <script src="./assets/js/main.js" type="module" defer></script>
- <script src="./assets/js/helpers/navbar.js"></script>
- <script src="./assets/js/helpers/darkmode.js" type="module" defer></script>
+  <script src="./assets/js/main.js" type="module" defer></script>
+    <!-- Animations -->
+  <script src="./assets/js/helpers/navbar.js"></script> 
+  <script src="./assets/js/helpers/darkmode.js" type="module" defer></script>
 </head>
+
 <body>
-    <!-- Loader -->
-    <div class="loader">
-      <div class="loader__container">
-        <span></span>
-      </div>
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader__container">
+      <span></span>
     </div>
-    
-    <!-- Heder -->
+  </div>
+
+  <!-- Header -->
   <header class="header">
     <nav class="nav container">
       <a href="/" class="nav__logo">
-        <img src="./assets/images/main_logo.png" alt="">    
+        <img src="./assets/images/main_logo.png" alt="">
       </a>
       <div class="nav__menu">
         <button type="button" class="nav__btn btn--close">
@@ -37,13 +39,15 @@
         </button>
         <ul class="nav__list">
           <li class="nav__items">
-            <a href="#" class="nav__link"><i class='bx bx-home-smile'>
-              </i><p class="color_inicio">inicio</p>
+            <a href="#" class="nav__link">
+              <i class='bx bx-home-smile'></i>
+              <p class="color_inicio">Inicio</p>
             </a>
           </li>
           <li class="nav__items">
-            <a href="#" class="nav__link"><i class='bx bxs-t-shirt'>
-              </i><p class="color_productos">productos</p>
+            <a href="#" class="nav__link">
+              <i class='bx bxs-t-shirt'></i>
+              <p class="color_productos">Productos</p>
             </a>
           </li>
         </ul>
@@ -55,26 +59,25 @@
         </button>
         <button type="button" class="nav__btn btn--menu">
           <i class='bx bx-grid-alt'></i>
-        </button> 
-          <!-- BOTON DE DARK MODE -->
-       <button class="switch" id="switch">
+        </button>
+        <!-- BOTON DE DARK MODE -->
+        <button class="switch" id="switch">
           <span>
             <i class="fa-solid fa-sun"></i>
           </span>
           <span><i class="fa-solid fa-moon"></i></span>
-       </button>
+        </button>
       </div>
     </nav>
   </header>
+<!-- main -->
   <main class="main">
     <section class="products section">
       <h2 class="products__title section--title">Productos</h2>
       <div class="products__container container"></div>
     </section>
-    <div class="product">
-    </div>
   </main>
-  
+
   <!-- CART -->
   <div class="cart">
     <div class="cart__container">
@@ -86,7 +89,7 @@
       </div>
       <div class="cart__body"></div>
       <div class="cart__footer">
-        <div class="cart__count"> 
+        <div class="cart__count">
           <span class="cart__count--text">Articulos</span>
           <span class="cart__count--item">0</span>
         </div>
@@ -101,7 +104,6 @@
     </div>
   </div>
 
-  
   <!-- FOOTER -->
   <footer class="footer">
     <!-- BOTON PARA CHAT -->
@@ -124,7 +126,8 @@
           <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
           <li><a href="#"><i class='bx bxl-whatsapp'></i></a></li>
         </ul>
-      </div>      
+      </div>
+    </div>
   </footer>
 </body>
 </html>

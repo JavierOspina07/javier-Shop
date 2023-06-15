@@ -159,16 +159,6 @@ button {
   }
 }
 
-@media screen and (min-width: 992px) {
-  :root {
-    --big-font: 2.5rem;
-    --medium-font: 2rem;
-    --normal-font: 1.25rem;
-    --small-font: 1rem;
-    --tiny-font: .8rem;
-  }
-}
-
 /* ===============  BASE  ==================== */
 
 body {
@@ -848,8 +838,6 @@ header.abajo{
     right: 0;
   }
 
-
-  
 
 /* ======= BREAKPOINTS ======== */
 @media (min-width: 768px) {
