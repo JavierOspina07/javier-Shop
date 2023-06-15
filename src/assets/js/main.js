@@ -4,6 +4,7 @@ import products from './components/products.js';
 import showCart from './components/showCart.js';
 import showMenu from './components/showMenu.js';
 import getProducts from './helpers/getProducts.js';
+import showDetailModal from './components/showDetails.js'
 
 /* UI Elements */
 
@@ -16,6 +17,7 @@ showMenu()
 /* Show Cart */
 showCart()
 
+
 /* End UI Elements */
 
 /* Products */
@@ -24,4 +26,7 @@ const { db, printProducts } = products(await getProducts())
 /* Cart */
 cart(db, printProducts)
 
+
+/* Show Detail */
+showDetailModal(db)
 
