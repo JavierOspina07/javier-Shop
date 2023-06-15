@@ -191,10 +191,11 @@ body.dark {
   background-color: var(--color-price);
 }
 
-.dark .nav__menu{
+.dark .show--menu{
   background-color: #000;
   border: 1px solid var(--color-price);
 }
+
 
 .dark .bx-x{
   color: red;
@@ -537,8 +538,15 @@ header.abajo{
 }
 
 .product__price{
-  
+  color: var(--primary-color);
+  font-weight: bold;
 }
+
+.product__stock{
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
 
 .product__btn {
   position: absolute;
@@ -879,6 +887,7 @@ header.abajo{
     --header-height: 75px
   }
 
+
   .header {
     top: 0;
     bottom: unset;
@@ -914,6 +923,7 @@ header.abajo{
   .container {
     margin: 0 auto;
   }
-  
+
+
 }
 
