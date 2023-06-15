@@ -21,7 +21,6 @@ function cart(db, printProducts) {
           <p class="cart__empty--text">No hay productos en el carrito</p>
         </div>
         `
-        notifyDOM.classList.remove('show--notify')
       } else {
         for (const item of cart) {
           const product = db.find(p => p.id === item.id)
