@@ -31,7 +31,7 @@ function cart(db, printProducts) {
             </div>
             <div class="article__content">
               <h3 class="article__title">${product.name}</h3>
-              <span class="article__price">${product.price}</span>
+              <span class="article__price">$${product.price}</span>
               <div class="article__quantity">
                 <button type="button" class="article__quantity-btn article--minus" data-id="${item.id}">
                   <i class='bx bx-minus'></i>
@@ -104,7 +104,12 @@ function cart(db, printProducts) {
         const productFinded = db.find(p => p.id === item.id)
         total += item.qty * productFinded.price
       }
-      return total
+
+        // Agrega el signo "$" al total
+      const totalConSigno = `$${total}`; // Aquí se asume que el total es un número de punto flotante y se redondea a 2 decimales
+  
+      return totalConSigno;
+
     }
   
     function checkout() {
