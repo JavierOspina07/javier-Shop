@@ -663,7 +663,8 @@ header.abajo{
   text-align: left;
   color: var(--color);
   background: var(--color-footer);
-  padding-bottom:20px;
+  padding-bottom:56px;
+  
 }
 
 .main {
