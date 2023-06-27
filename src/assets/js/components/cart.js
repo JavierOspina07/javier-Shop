@@ -11,42 +11,43 @@ function cart(db, printProducts) {
 
   // Funciones
   function printCart() {
-
+    
     let htmlCart = ''
 
     if (cart.length === 0) {
       htmlCart += `
-        <div class="cart__empty">
-          <i class='bx bx-cart'></i>
-          <p class="cart__empty--text">No hay productos en el carrito</p>
-        </div>
-        `
+      <div class="cart__empty">
+        <i class='bx bx-cart'></i>
+        <p class="cart__empty--text">No hay productos en el carrito</p>
+      </div>
+      `
+      notifyDOM.classList.remove('show--notify')
     } else {
       for (const item of cart) {
         const product = db.find(p => p.id === item.id)
         htmlCart += `
-          <article class="article">
-            <div class="article__image">
-              <img src="${product.image}" alt="${product.name}">
-            </div>
-            <div class="article__content">
-              <h3 class="article__title">${product.name}</h3>
-              <span class="article__price">$${product.price}</span>
-              <div class="article__quantity">
-                <button type="button" class="article__quantity-btn article--minus" data-id="${item.id}">
-                  <i class='bx bx-minus'></i>
-                </button>
-                <span class="article__quantity-text">${item.qty}</span>
-                <button type="button" class="article__quantity-btn article--plus" data-id="${item.id}">
-                  <i class='bx bx-plus'></i>
-                </button>
-              </div>
-              <button type="button" class="article__btn remove-from-cart" data-id="${item.id}">
-                <i class='bx bx-trash'></i>
+        <article class="article">
+          <div class="article__image">
+            <img src="${product.image}" alt="${product.name}">
+          </div>
+          <div class="article__content">
+            <h3 class="article__title">${product.name}</h3>
+            <span class="article__price">${product.price}</span>
+            <div class="article__quantity">
+              <button type="button" class="article__quantity-btn article--minus" data-id="${item.id}">
+                <i class='bx bx-minus'></i>
+              </button>
+              <span class="article__quantity-text">${item.qty}</span>
+              <button type="button" class="article__quantity-btn article--plus" data-id="${item.id}">
+                <i class='bx bx-plus'></i>
               </button>
             </div>
-          </article>
-          `
+            <button type="button" class="article__btn remove-from-cart" data-id="${item.id}">
+              <i class='bx bx-trash'></i>
+            </button>
+          </div>
+        </article>
+        `
       }
       notifyDOM.classList.add('show--notify')
     }
@@ -59,15 +60,25 @@ function cart(db, printProducts) {
 
   function addToCart(id, qty = 1) {
 
-    const itemFinded = cart.find(i => i.id === id)
-
-    if (itemFinded) {
-
-      itemFinded.qty += qty
-    } else {
-      cart.push({ id, qty })
+    const itemFinded = db.find(i => i.id === id)
+    if (itemFinded && itemFinded.quantity > 0) {
+      const item = cart.find(item => item.id === id)
+      if (item) {
+        if (checkStock (id, qty + item.qty)) {
+          item.qty++
+        } else {
+          window.alert('No hay stock disponible')
+        }
+      } else {
+        cart.push({id, qty})
+      }
     }
     printCart()
+  }
+
+  function checkStock (id, qty) {
+    const product = db.find(product => product.id === id)
+    return product.quantity - qty >=0
   }
 
   function removeFromCart(id, qty = 1) {
@@ -76,7 +87,7 @@ function cart(db, printProducts) {
 
     if (result > 0) {
       itemFinded.qty -= qty
-
+      
     } else {
       cart = cart.filter(i => i.id !== id)
     }
@@ -104,31 +115,31 @@ function cart(db, printProducts) {
       const productFinded = db.find(p => p.id === item.id)
       total += item.qty * productFinded.price
     }
-
-    // Agrega el signo "$" al total
-    const totalConSigno = `$${total}`; // Aquí se asume que el total es un número de punto flotante y se redondea a 2 decimales
-
-    return totalConSigno;
-
+    return total
   }
 
   function checkout() {
-    for (const item of cart) {
-      const productFinded = db.find(p => p.id === item.id)
-      productFinded.quantity -= item.qty
-    }
 
-    cart = []
-    printCart()
-    printProducts()
-    window.alert('Gracias por su compra')
+    if (cart.length === 0) {
+      window.alert('No hay artículos en el carrito')
+    } else {
+      for (const item of cart) {
+        const productFinded = db.find(p => p.id === item.id)
+        productFinded.quantity -= item.qty
+      }
+  
+      cart = []
+      printCart()
+      printProducts()
+      window.alert('Gracias por su compra')
+    }
   }
 
   printCart()
 
   // Eventos
   productsDOM.addEventListener('click', function (e) {
-
+    
     if (e.target.closest('.add--to--cart')) {
       const id = +e.target.closest('.add--to--cart').dataset.id
       addToCart(id)
@@ -159,6 +170,3 @@ function cart(db, printProducts) {
 }
 
 export default cart
-
-
-
