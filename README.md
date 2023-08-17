@@ -1,4 +1,4 @@
-# Javier-Shop
+# Shop - AJ
 
 
 Este es un e-commerce que ofrece la venta exclusiva de camisas de marca Academlo.
